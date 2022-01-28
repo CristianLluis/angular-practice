@@ -1,5 +1,10 @@
 <div class="server-item">
   <span>
-    Server with ID: <em>{{ serverId }}</em> is <strong> {{ getServerStatus() }} </strong>
+    Server with ID: <em>{{ serverId }}</em> is
+    <!-- [ngStyle]="{color: getColor()}"> -->
+    <strong 
+      [ngClass]="{'server-off': !serverIsOnline(), 'server-on': serverIsOnline()}">
+        {{ getServerStatus() }}
+    </strong>
   </span>
 </div>

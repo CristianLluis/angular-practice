@@ -1,3 +1,11 @@
 .server-item {
   margin: 5px 0;
 }
+
+.server-off {
+  color: darkred;
+}
+
+.server-on {
+  color: forestgreen;
+}
