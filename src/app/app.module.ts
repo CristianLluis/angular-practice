@@ -8,6 +8,7 @@ import { ServersComponent } from './servers/servers.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
+import { DirectivesComponent } from './directives/directives.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.compon
     WarningAlertComponent,
     SuccessAlertComponent,
     TwoWayBindingComponent,
+    DirectivesComponent,
   ],
   imports: [
     BrowserModule,
