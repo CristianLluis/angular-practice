@@ -1,1 +1,25 @@
-<p>directives works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3 col-xs-offset-3 text-center">
+      <button
+        class="btn btn-primary"
+        (click)="toggleVisibility()">
+        Display Details
+      </button>
+    </div>
+    <div class="col-xs-3 text-left">
+      <p *ngIf="paragraphVisible">
+        Secret Password = tuna
+      </p>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 15px;">
+    <div class="text-center col-xs-6 col-xs-offset-3">
+      <p
+        *ngFor="let log of logs; index as i"
+        [ngStyle]="{backgroundColor: getBackgroundColor(i)}"
+        [ngClass]="{'white-color': getColor(i)}"> {{ log }} </p>
+    </div>
+  </div>
+</div>
+
