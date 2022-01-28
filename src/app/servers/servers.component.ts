@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Event } from '@angular/router';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-servers',
@@ -10,14 +9,15 @@ import { Event } from '@angular/router';
 })
 export class ServersComponent implements OnInit {
 
-  allowNewServer: Boolean = false;
-  serverCreationStatus: String = 'No server was created';
-  serverName: String;
+  allowNewServer: Boolean = false
+  serverCreationStatus: String = 'No server was created'
+  serverName: String
   newServerCreated: Boolean = false
+  servers: String[] = ['Testserver', 'Testserver 2']
 
   constructor() {
     setTimeout(() => {
-      this.allowNewServer = true;
+      this.allowNewServer = true
     }, 2000)
   }
 
@@ -28,15 +28,16 @@ export class ServersComponent implements OnInit {
 
   onCreateServer(): void{
     this.serverCreationStatus = 'New server has been created! Name is ' + this.serverName
-    this.newServerCreated = true;
+    this.newServerCreated = true
+    this.servers.push(this.serverName)
   }
 
   serverNameAvailable(): Boolean {
     return ! ((this.serverName === undefined) || (this.serverName === "") || (this.serverName === null))
   }
 
-  onUpdateServerName(event: { target: HTMLInputElement; }): void {
-    this.serverName = (<HTMLInputElement>event.target).value;
+  onUpdateServerName(event: { target: HTMLInputElement }): void {
+    this.serverName = event.target.value
   }
 
 }
